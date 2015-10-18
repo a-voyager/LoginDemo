@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -27,11 +27,10 @@
 <body>
 	<h1>我的网站</h1>
 	<hr>
-	<form
-		action="${pageContext.request.contextPath}/servlet/LoginServlet }"
+	<form action="${pageContext.request.contextPath}/servlet/LoginServlet"
 		method="get">
 		用户名： <input type="text" name="username" /> 密码：<input type="password"
-			name="password" /> <input type="submit" name="登录" />
+			name="password" /> <input type="submit" value="登录" />
 	</form>
 </body>
 </html>

@@ -34,13 +34,13 @@
 		if (user==null) {
 	%>
 	欢迎游客光临！
-	<a href="${pageContext.request.contextPath}/login.jsp}">登录</a>
+	<a href="${pageContext.request.contextPath}/login.jsp">登录</a>
 	<a href="#">注册（暂不可用）</a>
 	<%
 		} else {
 	%>
 	欢迎回来!<%= user %>
-	<a href="${pageContext.request.contextPath}/servlet/LogoutServelt }">注销</a>
+	<a href="${pageContext.request.contextPath}/servlet/LogoutServelt">注销</a>
 	<%
 		}
 	%>
