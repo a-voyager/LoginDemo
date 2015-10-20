@@ -14,8 +14,17 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		response.getWriter().write("username = " + username + ", password = "
-				+ password);
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().write(
+				"username = " + username + ", password = " + password);
+		if (UserDao.isAvailable(username, password)) {
+			request.getSession().setAttribute("user", username);
+			response.sendRedirect(request.getContextPath() + "/index.jsp");
+		} else {
+			response.getWriter().write("\n用户名或密码不正确，登录失败！");
+
+		}
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
