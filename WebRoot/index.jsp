@@ -40,7 +40,7 @@
 		} else {
 	%>
 	欢迎回来!<%= user %>
-	<a href="${pageContext.request.contextPath}/servlet/LogoutServelt">注销</a>
+	<a href="${pageContext.request.contextPath}/servlet/LogoutServlet">注销</a>
 	<%
 		}
 	%>

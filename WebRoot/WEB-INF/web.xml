@@ -3,7 +3,7 @@
   <display-name>LoginDemo</display-name>
   <servlet>
     <servlet-name>LogoutServlet</servlet-name>
-    <servlet-class>LogoutServlet</servlet-class>
+    <servlet-class>com.voyager.LogoutServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
