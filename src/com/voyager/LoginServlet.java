@@ -16,14 +16,13 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
-		response.getWriter().write(
-				"username = " + username + ", password = " + password);
 		if (UserDao.isAvailable(username, password)) {
 			request.getSession().setAttribute("user", username);
 			response.sendRedirect(request.getContextPath() + "/index.jsp");
 		} else {
-			response.getWriter().write("\n用户名或密码不正确，登录失败！");
-
+			response.getWriter().write("用户名或密码不正确，登录失败！\n三秒后重新登录");
+//			response.sendRedirect(request.getContextPath()+"/login.jsp");
+			response.setHeader("refresh", "3;url="+request.getContextPath()+"/login.jsp");
 		}
 	}
 
